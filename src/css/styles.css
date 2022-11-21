@@ -18,3 +18,19 @@ body {
   max-width: 320px;
   margin-bottom: 16px;
 }
+img {
+  width: 300px;
+}
+ul {
+  list-style: none;
+}
+li {
+  display: flex;
+  width: 500px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.flag-picture {
+  width: 100px;
+  margin-right: 40px;
+}
