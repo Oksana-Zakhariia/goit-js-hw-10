@@ -32,15 +32,22 @@ function renderCountriesList(data) {
     return
    }
    else if (data.length > 1) {
-    let markup = data.map((country) => 
+    renderCountriesListInUl(data)
+   }
+   else {
+      renderCountryCard(data)
+  }   
+}
+function renderCountriesListInUl(data) {
+  let markup = data.map((country) => 
       `<li> 
       <img class="flag-picture" src="${country.flags.svg}" alt="${country.name.official} width="480">
       <h3 class='country-name' > ${country.name.official}</h3>        
         </li>` ).join(''); 
     list.innerHTML = markup ;
-   }
-   else {
-    let markup = data.map((country) => {
+};
+function renderCountryCard(data) {
+  let markup = data.map((country) => {
       return `<div>
         <img src="${country.flags.svg}" alt="${country.name.official} height="150">
           <h2><b>Назва країни</b>: ${country.name.official}</h2>
@@ -50,6 +57,5 @@ function renderCountriesList(data) {
           </div>`;
       }).join("");
      list.innerHTML = '';
-     coyntryCard.innerHTML = markup;     
-  }   
+     coyntryCard.innerHTML = markup;   
 }
